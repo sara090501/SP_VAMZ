@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">kvizzz</string>
-    <string name="addCategory">Pridať kategóriu</string>
+    <string name="play">Hrať</string>
+    <string name="quizPicture">Logo kvízu</string>
 </resources>
