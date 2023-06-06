@@ -2,4 +2,7 @@
     <string name="app_name">kvizzz</string>
     <string name="play">Hrať</string>
     <string name="quizPicture">Logo kvízu</string>
+    <string name="small_logo">Malé logo kvízu</string>
+    <string name="menageCategorie">Spravovať kategórie</string>
+    <string name="addCategory">Pridať kategóriu</string>
 </resources>

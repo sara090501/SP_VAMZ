@@ -5,31 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A1A1A1"
-    tools:context=".MainActivity">
-
-    <Button
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/grey"
-        android:text="@string/play"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="173dp"
-        android:layout_height="268dp"
-        android:layout_marginTop="192dp"
-        android:contentDescription="@string/quizPicture"
-        android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kvizzz" />
+    tools:context=".MenuActivity">
 
     <ImageView
         android:id="@+id/smallLogo"
@@ -40,6 +16,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/small_logo" />
+
+    <Button
+        android:id="@+id/manageCategories"
+        android:layout_width="343dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/menageCategorie"
+        app:layout_constraintBottom_toTopOf="@+id/smallLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addCategory"
+        android:layout_width="343dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="@color/grey"
+        android:text="@string/addCategory"
+        app:layout_constraintBottom_toTopOf="@+id/manageCategories"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/exit"
