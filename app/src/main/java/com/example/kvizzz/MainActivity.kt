@@ -12,11 +12,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val logo: ImageView = findViewById(R.id.logo);
         val playButton: Button = findViewById(R.id.play)
         playButton.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
+
+        val closeButton: ImageView = findViewById(R.id.exit)
+        closeButton.setOnClickListener {
+            onDestroy()
+        }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

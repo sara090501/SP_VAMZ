@@ -24,6 +24,7 @@
         android:layout_marginBottom="24dp"
         android:backgroundTint="@color/grey"
         android:text="@string/menageCategorie"
+        android:textColor="#D5D5D5"
         app:layout_constraintBottom_toTopOf="@+id/smallLogo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -34,7 +35,9 @@
         android:layout_height="61dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="@color/grey"
+        android:contentDescription="@string/addCategory"
         android:text="@string/addCategory"
+        android:textColor="#D5D5D5"
         app:layout_constraintBottom_toTopOf="@+id/manageCategories"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -50,5 +53,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/exit" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="129dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="70dp"
+        android:text="@string/categories"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#D5D5D5"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

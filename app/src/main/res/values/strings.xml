@@ -5,4 +5,7 @@
     <string name="small_logo">Malé logo kvízu</string>
     <string name="menageCategorie">Spravovať kategórie</string>
     <string name="addCategory">Pridať kategóriu</string>
+    <string name="categories">Kategórie</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
