@@ -13,12 +13,6 @@ class MenuActivity : AppCompatActivity() {
 
         val addCategory: Button = findViewById(R.id.addCategory)
         addCategory.setOnClickListener {
-            val intent = Intent(this, AddQuestionActivity::class.java)
-            startActivity(intent)
-        }
-
-        val manageCategories: Button = findViewById(R.id.manageCategories)
-        manageCategories.setOnClickListener {
             val intent = Intent(this, AddCategoryActivity::class.java)
             startActivity(intent)
         }
