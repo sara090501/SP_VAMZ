@@ -12,6 +12,9 @@
         android:theme="@style/Theme.Kvizzz"
         tools:targetApi="31">
         <activity
+            android:name=".AddQuestionActivity"
+            android:exported="false" />
+        <activity
             android:name=".MenuActivity"
             android:exported="false" />
         <activity

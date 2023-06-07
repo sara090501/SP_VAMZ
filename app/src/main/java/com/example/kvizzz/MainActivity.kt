@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val closeButton: ImageView = findViewById(R.id.exit)
-        closeButton.setOnClickListener {
+        val exit: ImageView = findViewById(R.id.exit)
+        exit.setOnClickListener {
             onDestroy()
         }
 

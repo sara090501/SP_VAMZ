@@ -11,14 +11,20 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-//        val addCategorie: Button = findViewById(R.id.addCategory)
-//        addCategorie.setOnClickListener {
-//            val intent = Intent(this, AddCategoryFragment::class.java)
-//            startActivity(intent)
-//        }
+        val addCategory: Button = findViewById(R.id.addCategory)
+        addCategory.setOnClickListener {
+            val intent = Intent(this, AddQuestionActivity::class.java)
+            startActivity(intent)
+        }
 
-        val closeButton: ImageView = findViewById(R.id.exit)
-        closeButton.setOnClickListener {
+        val manageCategories: Button = findViewById(R.id.manageCategories)
+        manageCategories.setOnClickListener {
+            val intent = Intent(this, AddCategoryActivity::class.java)
+            startActivity(intent)
+        }
+
+        val exit: ImageView = findViewById(R.id.exit)
+        exit.setOnClickListener {
             finish()
         }
     }
