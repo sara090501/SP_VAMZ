@@ -4,7 +4,7 @@ import android.util.Log
 
 class QuestionViewModel {
     private var _question = "question"
-    private var _description = "description"
+    private var _responses: MutableList<ResponseViewModel> = mutableListOf()
 
     init {
         Log.d("QuestionViewModel", "Question $_question created!")
@@ -13,6 +13,6 @@ class QuestionViewModel {
     val question: String
         get() = _question
 
-    val description: String
-        get() = _description
+    val responses: MutableList<ResponseViewModel>
+        get() = _responses
 }
