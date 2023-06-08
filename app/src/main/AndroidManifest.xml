@@ -12,16 +12,16 @@
         android:theme="@style/Theme.Kvizzz"
         tools:targetApi="31">
         <activity
-            android:name=".AddQuestionActivity"
+            android:name=".activity.AddQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".AddCategoryActivity"
+            android:name=".activity.AddCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".activity.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

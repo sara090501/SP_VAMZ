@@ -1,25 +1,32 @@
-package com.example.kvizzz
+package com.example.kvizzz.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import com.example.kvizzz.R
 
-class MenuActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_menu)
+        setContentView(R.layout.activity_main)
 
-        val addCategory: Button = findViewById(R.id.addCategory)
-        addCategory.setOnClickListener {
-            val intent = Intent(this, AddCategoryActivity::class.java)
+        val playButton: Button = findViewById(R.id.play)
+        playButton.setOnClickListener {
+            val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
         }
 
         val exit: ImageView = findViewById(R.id.exit)
         exit.setOnClickListener {
-            finish()
+            onDestroy()
         }
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A1A1A1"
-    tools:context=".MenuActivity">
+    tools:context=".activity.MenuActivity">
 
     <ImageView
         android:id="@+id/smallLogo"
