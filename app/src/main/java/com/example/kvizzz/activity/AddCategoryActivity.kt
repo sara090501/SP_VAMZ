@@ -1,9 +1,11 @@
 package com.example.kvizzz.activity
 
 import android.content.Context
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kvizzz.R
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -18,9 +20,18 @@ class AddCategoryActivity : AppCompatActivity() {
             finish()
         }
 
+        val name: TextView = findViewById(R.id.fillCategoryName)
+
         val addCategory: Button = findViewById(R.id.addCategory)
         addCategory.setOnClickListener {
-            showFinalAddCategoryDialog()
+            if (isFieldEmpty(name.text.toString())) {
+                val nameNotFilled: String = getString(R.string.nameNotFilled)
+                name.error = nameNotFilled
+                name.requestFocus()
+            }
+            else {
+                showFinalAddCategoryDialog()
+            }
         }
     }
 
@@ -35,6 +46,23 @@ class AddCategoryActivity : AppCompatActivity() {
                 closeContextMenu()
             }
             .show()
+    }
+
+    private fun errorDialog() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.nameNotFilled))
+            .setCancelable(true)
+            .setNegativeButton(getString(R.string.ok)) { _, _ ->
+                finish()
+            }
+            .show()
+    }
+
+    private fun isFieldEmpty(text: String): Boolean {
+        if (text.equals("", true)) {
+            return true
+        }
+        return false
     }
 
     private fun requireContext(): Context {

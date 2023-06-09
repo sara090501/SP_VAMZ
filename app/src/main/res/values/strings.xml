@@ -15,6 +15,8 @@
     <string name="reallyAddCategory">Naozaj chceš pridať kategóriu %s?</string>
     <string name="yesAddCategory">Áno</string>
     <string name="noAddCategory">Nie</string>
+    <string name="nameNotFilled">Meno musí byť vyplnené!</string>
+    <string name="ok">Ok</string>
 
     <string name="question">Otázka:</string>
     <string name="questionHint">Akej farby je obloha?</string>

@@ -21,7 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.014"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fillQuestion" />
+        app:layout_constraintTop_toBottomOf="@+id/fillCategoryName" />
 
     <TextView
         android:id="@+id/nameOfCategory"
@@ -40,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fillQuestion"
+        android:id="@+id/fillCategoryName"
         android:layout_width="333dp"
         android:layout_height="61dp"
         android:layout_marginStart="32dp"
@@ -55,7 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/nameOfCategory" />
 
     <EditText
-        android:id="@+id/fillQuestion2"
+        android:id="@+id/fillCategoryDesctription"
         android:layout_width="333dp"
         android:layout_height="61dp"
         android:layout_marginTop="8dp"
