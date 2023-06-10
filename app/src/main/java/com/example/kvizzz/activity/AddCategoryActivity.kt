@@ -3,14 +3,22 @@ package com.example.kvizzz.activity
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.example.kvizzz.R
+import com.example.kvizzz.data.Category
+import com.example.kvizzz.data.CategoryViewModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AddCategoryActivity : AppCompatActivity() {
+
+    private lateinit var categoryViewModel: CategoryViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_category)
@@ -32,7 +40,19 @@ class AddCategoryActivity : AppCompatActivity() {
             else {
                 showFinalAddCategoryDialog()
             }
+
+            categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
+            insertDataToDatabase()
+            finish()
         }
+    }
+
+    private fun insertDataToDatabase() {
+        val name: TextView = findViewById(R.id.fillCategoryName)
+        val description: TextView = findViewById(R.id.fillCategoryDesctription)
+
+        val category = Category(0, name.text.toString(), description.text.toString())
+        categoryViewModel.addCategory(category)
     }
 
     private fun showFinalAddCategoryDialog() {
