@@ -3,7 +3,7 @@ package com.example.kvizzz.activity
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
-import com.example.kvizzz.QuizDatabaseDao
+import com.example.kvizzz.dao.CategoryDao
 import com.example.kvizzz.entity.CategoryEntity
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -15,7 +15,7 @@ import java.io.IOException
 @RunWith(AndroidJUnit4::class)
 class QuizDatabaseTest {
 
-    private lateinit var quizDatabaseDao: QuizDatabaseDao
+    private lateinit var quizDatabaseDao: CategoryDao
     private lateinit var db: QuizDatabase
 
     @Before
