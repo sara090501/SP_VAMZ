@@ -40,10 +40,6 @@ class AddCategoryActivity : AppCompatActivity() {
             else {
                 showFinalAddCategoryDialog()
             }
-
-            categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
-            insertDataToDatabase()
-            finish()
         }
     }
 
@@ -60,6 +56,9 @@ class AddCategoryActivity : AppCompatActivity() {
             .setTitle(getString(R.string.reallyAddCategory, "bla bla"))
             .setCancelable(false)
             .setPositiveButton(getString(R.string.yesAddCategory)) { _, _ ->
+                categoryViewModel = ViewModelProvider(this).get(CategoryViewModel::class.java)
+                insertDataToDatabase()
+                closeContextMenu()
                 finish()
             }
             .setNegativeButton(getString(R.string.noAddCategory)) { _, _ ->
@@ -87,5 +86,9 @@ class AddCategoryActivity : AppCompatActivity() {
 
     private fun requireContext(): Context {
         return this
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
     }
 }
