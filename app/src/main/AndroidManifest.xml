@@ -15,10 +15,10 @@
             android:name=".activity.AddQuestionActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.AddCategoryActivity"
+            android:name=".notUsed.AddCategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.MenuActivity"
+            android:name=".notUsed.MenuActivity"
             android:exported="false" />
         <activity
             android:name=".activity.MainActivity"
