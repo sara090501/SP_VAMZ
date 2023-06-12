@@ -10,18 +10,17 @@ import kotlinx.coroutines.launch
 class CategoryViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _getAllCategories: LiveData<List<Category>>
-    private val repository: CategoryRepository
+    private var _categoryDao: CategoryDao
 
     init {
-        val categoryDao = QuizDatabase.getDatabase(application).categoryDao()
-        repository = CategoryRepository(categoryDao)
-        _getAllCategories = repository.getAllCategories
+        _categoryDao = QuizDatabase.getDatabase(application).categoryDao()
+        _getAllCategories = _categoryDao.getAllCategories()
 
     }
 
     fun addCategory(category: Category) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.addCategory(category)
+            _categoryDao.addCategory(category)
         }
     }
 
