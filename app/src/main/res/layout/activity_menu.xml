@@ -61,7 +61,7 @@
             android:layout_height="61dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="@color/grey"
-            android:text="@string/menageCategories"
+            android:text="@string/rateApp"
             android:textColor="#D5D5D5"
             app:layout_constraintBottom_toTopOf="@+id/smallLogo"
             app:layout_constraintEnd_toEndOf="parent"

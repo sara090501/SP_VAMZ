@@ -14,8 +14,6 @@ import com.example.kvizzz.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
 
-    private lateinit var name: String
-    private lateinit var description: String
     private lateinit var binding: ActivityMenuBinding
     private val categoryAdapter by lazy { CategoryAdapter() }
 

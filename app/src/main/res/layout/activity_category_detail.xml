@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A1A1A1"
+    tools:context=".activity.CategoryDetailActivity">
+
+    <TextView
+        android:id="@+id/categoryDescription"
+        android:layout_width="313dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="32dp"
+        android:text="@string/categoryDesctioprion"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#D5D5D5"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/nameOfCategory"
+        android:layout_width="329dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/nameOfCategory"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#D5D5D5"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/categoryDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904" />
+
+    <ImageView
+        android:id="@+id/smallLogo"
+        android:layout_width="98dp"
+        android:layout_height="17dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/small_logo" />
+
+    <Button
+        android:id="@+id/play"
+        android:layout_width="343dp"
+        android:layout_height="61dp"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/addQuestion"
+        android:text="@string/play"
+        android:textColor="#D5D5D5"
+        app:layout_constraintBottom_toBottomOf="@+id/smallLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/removeCategory"
+        android:layout_width="343dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/addQuestion"
+        android:text="@string/removeCategory"
+        android:textColor="#D5D5D5"
+        app:layout_constraintBottom_toTopOf="@+id/smallLogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/addQuestion"
+        android:layout_width="343dp"
+        android:layout_height="61dp"
+        android:backgroundTint="@color/grey"
+        android:contentDescription="@string/addQuestion"
+        android:text="@string/addQuestion"
+        android:textColor="#D5D5D5"
+        app:layout_constraintBottom_toTopOf="@+id/removeCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/exit"
+        android:layout_width="54dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/exit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

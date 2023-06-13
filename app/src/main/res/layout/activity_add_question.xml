@@ -50,7 +50,7 @@
         app:srcCompat="@drawable/small_logo" />
 
     <Button
-        android:id="@+id/addCategory"
+        android:id="@+id/addQuestion"
         android:layout_width="343dp"
         android:layout_height="61dp"
         android:layout_marginBottom="24dp"
