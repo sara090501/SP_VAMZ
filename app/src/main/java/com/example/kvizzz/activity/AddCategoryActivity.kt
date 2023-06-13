@@ -1,37 +1,35 @@
 package com.example.kvizzz.activity
 
 import android.content.Context
-import android.graphics.Color
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import com.example.kvizzz.R
 import com.example.kvizzz.data.Category
 import com.example.kvizzz.data.CategoryViewModel
+import com.example.kvizzz.databinding.ActivityAddCategoryBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AddCategoryActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityAddCategoryBinding
     private lateinit var categoryViewModel: CategoryViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_category)
+        binding = ActivityAddCategoryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val exit: ImageView = findViewById(R.id.exit)
-        exit.setOnClickListener {
+        binding.exit.setOnClickListener {
             finish()
         }
 
-        val name: TextView = findViewById(R.id.fillCategoryName)
+        binding.addCategory.setOnClickListener {
+            val name = binding.fillCategoryName
 
-        val addCategory: Button = findViewById(R.id.addCategory)
-        addCategory.setOnClickListener {
             if (isFieldEmpty(name.text.toString())) {
                 val nameNotFilled: String = getString(R.string.nameNotFilled)
                 name.error = nameNotFilled
@@ -63,16 +61,6 @@ class AddCategoryActivity : AppCompatActivity() {
             }
             .setNegativeButton(getString(R.string.noAddCategory)) { _, _ ->
                 closeContextMenu()
-            }
-            .show()
-    }
-
-    private fun errorDialog() {
-        MaterialAlertDialogBuilder(requireContext())
-            .setTitle(getString(R.string.nameNotFilled))
-            .setCancelable(true)
-            .setNegativeButton(getString(R.string.ok)) { _, _ ->
-                finish()
             }
             .show()
     }
