@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A1A1A1"
     tools:context=".activity.MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nameOfCategory"
+            android:layout_width="129dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/categories"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#D5D5D5"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/categoryRecyclerView"
+            android:layout_width="302dp"
+            android:layout_height="266dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/addCategory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameOfCategory"
+            tools:listitem="@layout/category_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/manageCategories"
+            android:layout_width="343dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/grey"
+            android:text="@string/menageCategories"
+            android:textColor="#D5D5D5"
+            app:layout_constraintBottom_toTopOf="@+id/smallLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/addCategory"
+            android:layout_width="343dp"
+            android:layout_height="61dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@color/grey"
+            android:contentDescription="@string/addCategory"
+            android:text="@string/addCategory"
+            android:textColor="#D5D5D5"
+            app:layout_constraintBottom_toTopOf="@+id/manageCategories"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/smallLogo"
@@ -16,31 +78,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/small_logo" />
-
-    <Button
-        android:id="@+id/manageCategories"
-        android:layout_width="343dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/grey"
-        android:text="@string/menageCategories"
-        android:textColor="#D5D5D5"
-        app:layout_constraintBottom_toTopOf="@+id/smallLogo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/addCategory"
-        android:layout_width="343dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/addCategory"
-        android:text="@string/addCategory"
-        android:textColor="#D5D5D5"
-        app:layout_constraintBottom_toTopOf="@+id/manageCategories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/exit"
@@ -54,30 +91,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/exit" />
 
-    <TextView
-        android:id="@+id/nameOfCategory"
-        android:layout_width="129dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="70dp"
-        android:text="@string/categories"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#D5D5D5"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryRecyclerView"
-        android:layout_width="409dp"
-        android:layout_height="429dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toTopOf="@+id/addCategory"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameOfCategory"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

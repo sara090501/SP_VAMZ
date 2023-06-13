@@ -12,5 +12,8 @@ interface CategoryDao {
     fun addCategory(category: Category)
 
     @Query("SELECT * FROM category_table ORDER BY name ASC" )
-    fun getAllCategories(): LiveData<List<Category>>
+    fun getAllCategories(): MutableList<Category>
+
+    @Query("SELECT * FROM category_table WHERE id LIKE :id")
+    fun getCategory(id: Int) : Category
 }

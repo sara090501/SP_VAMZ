@@ -21,4 +21,7 @@
     <string name="question">Otázka:</string>
     <string name="questionHint">Akej farby je obloha?</string>
     <string name="addQuestion">Pridať otázku</string>
+
+    <string name="name">Meno</string>
+    <string name="description">Popis</string>
 </resources>

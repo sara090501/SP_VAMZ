@@ -1,34 +1,38 @@
 package com.example.kvizzz.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
+import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.get
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import com.example.kvizzz.R
-import com.example.kvizzz.data.CategoryViewModel
+import com.example.kvizzz.data.CategoryAdapter
 import com.example.kvizzz.data.QuizDatabase
 import com.example.kvizzz.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
 
+    private lateinit var name: String
+    private lateinit var description: String
     private lateinit var binding: ActivityMenuBinding
-    private lateinit var categoryViewModel: CategoryViewModel
+    private val categoryAdapter by lazy { CategoryAdapter() }
+
+    // vytvorenie databazy
+    private val quizDatabase : QuizDatabase by lazy {
+        Room.databaseBuilder(this,QuizDatabase::class.java, "quiz_database")
+            .allowMainThreadQueries()
+            .fallbackToDestructiveMigration()
+            .build()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        binding.addCategory.setOnClickListener(
-//            val intent = Intent(this, AddCategoryActivity::class.java)
-//            startActivity(intent)
-//        )
-
-        val addCategory: Button = findViewById(R.id.addCategory)
-        addCategory.setOnClickListener {
+        binding.addCategory.setOnClickListener {
             val intent = Intent(this, AddCategoryActivity::class.java)
             startActivity(intent)
         }
@@ -36,11 +40,35 @@ class MenuActivity : AppCompatActivity() {
         binding.exit.setOnClickListener {
             finish()
         }
+    }
 
-//        //nacitanie zoznamu po opetovnom prichode do aktivity
-//        override fun onResume() {
-//            super.onResume()
-//            checkItem()
-//        }
+    //nacitanie zoznamu po opetovnom prichode do aktivity
+    override fun onResume() {
+        super.onResume()
+        checkItem()
+    }
+
+    private fun checkItem() {
+        binding.apply {
+            categoryAdapter.differ.submitList(quizDatabase.categoryDao().getAllCategories())
+            setupRecyclerView()
+
+            categoryRecyclerView.canScrollVertically(80)
+//            quizDatabase.categoryDao().getAllCategories().forEach {
+//                name = it.name
+//                description = it.description
+//                println("he" + it.name + it.description)
+//            }
+
+//            binding.categoryRecyclerView.
+
+        }
+    }
+
+    private fun setupRecyclerView() {
+        binding.categoryRecyclerView.apply {
+            layoutManager = LinearLayoutManager(this@MenuActivity)
+            adapter = categoryAdapter
+        }
     }
 }
