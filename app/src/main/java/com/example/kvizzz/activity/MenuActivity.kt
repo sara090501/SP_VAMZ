@@ -53,15 +53,7 @@ class MenuActivity : AppCompatActivity() {
             categoryAdapter.differ.submitList(quizDatabase.categoryDao().getAllCategories())
             setupRecyclerView()
 
-            categoryRecyclerView.canScrollVertically(80)
-//            quizDatabase.categoryDao().getAllCategories().forEach {
-//                name = it.name
-//                description = it.description
-//                println("he" + it.name + it.description)
-//            }
-
-//            binding.categoryRecyclerView.
-
+            categoryRecyclerView.canScrollVertically(1)
         }
     }
 

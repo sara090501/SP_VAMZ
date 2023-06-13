@@ -38,7 +38,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
             binding.apply {
                 //nastavenie hodnot v layoute
                 itemCategoryName.text = item.name
-                itemCategoryDescription.text = item.description
+//                itemCategoryDescription.text = item.description
 
                 //nastavenie co sa ma stat po kliknuti na cvik zo zoznamu
 //                root.setOnClickListener {
