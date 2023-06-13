@@ -1,10 +1,10 @@
 package com.example.kvizzz.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.kvizzz.R
+import com.example.kvizzz.data.Category
 import com.example.kvizzz.data.QuizDatabase
 import com.example.kvizzz.databinding.ActivityCategoryDetailBinding
 
@@ -12,6 +12,7 @@ class CategoryDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCategoryDetailBinding
     private var categoryId = 0
+    private lateinit var categoryEntity: Category
 
     // vytvorenie databazy
     private val quizDatabase : QuizDatabase by lazy {
@@ -43,6 +44,12 @@ class CategoryDetailActivity : AppCompatActivity() {
             binding.addQuestion.setOnClickListener {
                 val intent = Intent(this@CategoryDetailActivity, AddQuestionActivity::class.java)
                 startActivity(intent)
+            }
+
+            binding.removeCategory.setOnClickListener {
+                categoryEntity = quizDatabase.categoryDao().getCategory(categoryId)
+                quizDatabase.categoryDao().deleteCategory(categoryEntity)
+                finish()
             }
         }
     }
