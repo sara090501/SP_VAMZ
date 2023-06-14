@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kvizzz.databinding.QuestionItemBinding
+import java.util.Arrays
 
 class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
     private lateinit var binding: QuestionItemBinding
@@ -40,22 +41,28 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
             binding.apply {
                 question.text = item.question
 
-                //nastavenie hodnot v layoute
+                val green: FloatArray = floatArrayOf(91f,44f,64f)
+                var red: FloatArray = floatArrayOf(356f,49f,64f)
                 no.setOnClickListener {
-
                     if (!item.right) {
-                        question.setBackgroundColor(Color.GREEN)
+                        question.setBackgroundColor(Color.HSVToColor(green))
                     } else {
-                        question.setBackgroundColor(Color.RED)
+                        question.setBackgroundColor(Color.HSVToColor(red))
                     }
+
+                    no.isEnabled = false
+                    yes.isEnabled = false
                 }
 
                 yes.setOnClickListener {
                     if (item.right) {
-                        question.setBackgroundColor(Color.GREEN)
+                        question.setBackgroundColor(Color.HSVToColor(green))
                     } else {
-                        question.setBackgroundColor(Color.RED)
+                        question.setBackgroundColor(Color.HSVToColor(red))
                     }
+
+                    no.isEnabled = false
+                    yes.isEnabled = false
                 }
             }
         }
