@@ -1,4 +1,35 @@
 <resources>
     <string name="app_name">kvizzz</string>
+    <string name="play">Hrať</string>
+    <string name="quizPicture">Logo kvízu</string>
+    <string name="small_logo">Malé logo kvízu</string>
+    <string name="rateApp">Ohodnoť aplikáciu</string>
     <string name="addCategory">Pridať kategóriu</string>
+    <string name="categories">Kategórie</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nameOfCategory">Názov kategórie</string>
+    <string name="categoryHint">Biológia</string>
+    <string name="categoryDesctioprion">Popis</string>
+    <string name="desctiprionHint">Táto kategória preveruje znalosti z biológie.</string>
+    <string name="reallyAddCategory">Naozaj chceš pridať kategóriu %s?</string>
+    <string name="yesAddCategory">Áno</string>
+    <string name="noAddCategory">Nie</string>
+    <string name="nameNotFilled">Meno musí byť vyplnené!</string>
+    <string name="ok">Ok</string>
+
+    <string name="question">Otázka:</string>
+    <string name="questionHint">Je tráva zelená?</string>
+    <string name="addQuestion">Pridať otázku</string>
+
+    <string name="name">Meno</string>
+    <string name="description">Popis</string>
+    <string name="removeCategory">Odstrániť kategóriu</string>
+
+    <string name="yes">Áno</string>
+    <string name="no">Nie</string>
+    <string name="questionText">Otázka</string>
+    <string name="reallyAddQuestion">Naozaj chceš pridať otázku %s?</string>
+    <string name="noDecision">Správnosť musí byť zvolená!</string>
+    <string name="showResult">Vyhodnotiť</string>
 </resources>
