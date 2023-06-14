@@ -14,8 +14,6 @@ import com.example.kvizzz.databinding.ActivityMenuBinding
 
 class MenuActivity : AppCompatActivity() {
 
-    private lateinit var name: String
-    private lateinit var description: String
     private lateinit var binding: ActivityMenuBinding
     private val categoryAdapter by lazy { CategoryAdapter() }
 
@@ -54,13 +52,6 @@ class MenuActivity : AppCompatActivity() {
             setupRecyclerView()
 
             categoryRecyclerView.canScrollVertically(80)
-//            quizDatabase.categoryDao().getAllCategories().forEach {
-//                name = it.name
-//                description = it.description
-//                println("he" + it.name + it.description)
-//            }
-
-//            binding.categoryRecyclerView.
 
         }
     }

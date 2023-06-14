@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kvizzz.activity.CategoryDetailActivity
 import com.example.kvizzz.databinding.CategoryItemBinding
 
 class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
@@ -38,14 +39,12 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
             binding.apply {
                 //nastavenie hodnot v layoute
                 itemCategoryName.text = item.name
-                itemCategoryDescription.text = item.description
 
-                //nastavenie co sa ma stat po kliknuti na cvik zo zoznamu
-//                root.setOnClickListener {
-//                    val intent= Intent(context,WorkoutDetailActivity::class.java)
-//                    intent.putExtra("bundle_workout_id", item.id)
-//                    context.startActivity(intent)
-//                }
+                itemCategoryName.setOnClickListener {
+                    val intent = Intent(context, CategoryDetailActivity::class.java)
+                    intent.putExtra("category_detail", item.id)
+                    context.startActivity(intent)
+                }
 
             }
         }
