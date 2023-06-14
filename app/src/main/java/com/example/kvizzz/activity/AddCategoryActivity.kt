@@ -1,5 +1,6 @@
 package com.example.kvizzz.activity
 
+import CategoryViewModel
 import android.content.Context
 import android.os.Bundle
 import android.widget.TextView
@@ -7,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.kvizzz.R
 import com.example.kvizzz.data.Category
-import com.example.kvizzz.data.CategoryDao
 import com.example.kvizzz.data.QuizDatabase
 import com.example.kvizzz.databinding.ActivityAddCategoryBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -15,6 +15,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 class AddCategoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddCategoryBinding
+    private lateinit var categoryViewModel: CategoryViewModel
 
     private val quizDatabase : QuizDatabase by lazy {
         Room.databaseBuilder(this, QuizDatabase::class.java, "quiz_database")
@@ -54,7 +55,7 @@ class AddCategoryActivity : AppCompatActivity() {
         val description = binding.fillCategoryDesctription.text.toString()
 
         val category = Category(0, name, description)
-        quizDatabase.categoryDao().addCategory(category)
+        categoryViewModel.addCategory(category)
     }
 
     private fun showFinalAddCategoryDialog() {
