@@ -2,13 +2,10 @@ package com.example.kvizzz.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.get
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
-import com.example.kvizzz.data.CategoryAdapter
+import com.example.kvizzz.data.category.CategoryAdapter
 import com.example.kvizzz.data.QuizDatabase
 import com.example.kvizzz.databinding.ActivityMenuBinding
 

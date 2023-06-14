@@ -1,6 +1,5 @@
-package com.example.kvizzz.data
+package com.example.kvizzz.data.category
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert

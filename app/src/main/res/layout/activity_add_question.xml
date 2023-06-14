@@ -8,11 +8,11 @@
     tools:context=".activity.AddQuestionActivity">
 
     <TextView
-        android:id="@+id/nameOfCategory"
+        android:id="@+id/questionText"
         android:layout_width="105dp"
         android:layout_height="37dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="140dp"
         android:text="@string/question"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -20,15 +20,16 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/fillCategoryName"
-        android:layout_width="333dp"
-        android:layout_height="61dp"
+        android:id="@+id/fillQuestion"
+        android:layout_width="326dp"
+        android:layout_height="197dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rectangle_background"
         android:gravity="center"
@@ -36,8 +37,9 @@
         android:textColor="#D5D5D5"
         android:textColorHint="#8C8C8C"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameOfCategory" />
+        app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
     <ImageView
         android:id="@+id/smallLogo"
@@ -50,7 +52,7 @@
         app:srcCompat="@drawable/small_logo" />
 
     <Button
-        android:id="@+id/addCategory"
+        android:id="@+id/addQuestion"
         android:layout_width="343dp"
         android:layout_height="61dp"
         android:layout_marginBottom="24dp"
@@ -73,5 +75,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/exit" />
+
+    <RadioGroup
+        android:id="@+id/decisionRW"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/addCategory"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fillQuestion">
+
+        <RadioButton
+            android:id="@+id/yesDecision"
+            android:layout_width="145dp"
+            android:layout_height="60dp"
+            android:text="@string/yes"
+            android:textAlignment="center"
+            android:textColor="#D5D5D5"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/noDecision"
+            android:layout_width="145dp"
+            android:layout_height="60dp"
+            android:elegantTextHeight="false"
+            android:text="@string/no"
+            android:textAlignment="center"
+            android:textColor="#D5D5D5"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
-import com.example.kvizzz.data.Category
 import com.example.kvizzz.data.QuizDatabase
+import com.example.kvizzz.data.category.Category
 import com.example.kvizzz.databinding.ActivityCategoryDetailBinding
 
 class CategoryDetailActivity : AppCompatActivity() {
@@ -42,7 +42,16 @@ class CategoryDetailActivity : AppCompatActivity() {
                 quizDatabase.categoryDao().getCategory(categoryId).description
 
             binding.addQuestion.setOnClickListener {
-                val intent = Intent(this@CategoryDetailActivity, AddQuestionActivity::class.java)
+                val intent = Intent(this@CategoryDetailActivity,
+                    AddQuestionActivity::class.java)
+                intent.putExtra("categoryId", categoryId)
+                startActivity(intent)
+            }
+
+            binding.play.setOnClickListener {
+                val intent = Intent(this@CategoryDetailActivity,
+                    GameActivity::class.java)
+                intent.putExtra("categoryId", categoryId)
                 startActivity(intent)
             }
 

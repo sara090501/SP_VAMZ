@@ -24,6 +24,11 @@
 
     <string name="name">Meno</string>
     <string name="description">Popis</string>
-
     <string name="removeCategory">Odstrániť kategóriu</string>
+
+    <string name="yes">Áno</string>
+    <string name="no">Nie</string>
+    <string name="questionText">Otázka</string>
+    <string name="reallyAddQuestion">Naozaj chceš pridať otázku %s?</string>
+    <string name="showResult">Vyhodnotiť</string>
 </resources>

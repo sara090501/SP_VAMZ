@@ -1,4 +1,4 @@
-package com.example.kvizzz.data
+package com.example.kvizzz.data.category
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -22,7 +22,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
         return ViewHolder()
     }
 
-    override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(differ.currentList[position])
         holder.setIsRecyclable(false)
     }
@@ -45,7 +45,6 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
                     intent.putExtra("category_detail", item.id)
                     context.startActivity(intent)
                 }
-
             }
         }
     }

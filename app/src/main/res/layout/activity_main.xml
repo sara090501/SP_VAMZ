@@ -37,16 +37,6 @@
             app:srcCompat="@drawable/kvizzz" />
 
         <ImageView
-            android:id="@+id/smallLogo"
-            android:layout_width="98dp"
-            android:layout_height="17dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/small_logo" />
-
-        <ImageView
             android:id="@+id/exit"
             android:layout_width="54dp"
             android:layout_height="56dp"

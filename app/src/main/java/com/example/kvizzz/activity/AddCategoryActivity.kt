@@ -6,8 +6,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.kvizzz.R
-import com.example.kvizzz.data.Category
-import com.example.kvizzz.data.CategoryDao
+import com.example.kvizzz.data.category.Category
 import com.example.kvizzz.data.QuizDatabase
 import com.example.kvizzz.databinding.ActivityAddCategoryBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
