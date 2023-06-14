@@ -41,7 +41,7 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
                 question.text = item.question
 
                 // vytvorenie farieb pre spravnost odpovede
-                val green: Int = Color.rgb(255, 102, 102)
+                val green: Int = Color.rgb(51, 204, 51)
                 val red: Int = Color.rgb(255, 102, 102)
 
                 // ak pouzivatel stacil tlacidlo nie

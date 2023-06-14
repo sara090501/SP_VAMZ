@@ -51,17 +51,17 @@
             android:contentDescription="@string/addCategory"
             android:text="@string/addCategory"
             android:textColor="#D5D5D5"
-            app:layout_constraintBottom_toTopOf="@+id/manageCategories"
+            app:layout_constraintBottom_toTopOf="@+id/like"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/manageCategories"
+            android:id="@+id/like"
             android:layout_width="343dp"
             android:layout_height="61dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="@color/grey"
-            android:text="@string/rateApp"
+            android:text="@string/like"
             android:textColor="#D5D5D5"
             app:layout_constraintBottom_toTopOf="@+id/smallLogo"
             app:layout_constraintEnd_toEndOf="parent"

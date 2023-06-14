@@ -7,31 +7,16 @@
     android:background="#A1A1A1"
     tools:context=".activity.GameActivity">
 
-    <Button
-        android:id="@+id/showResult"
-        android:layout_width="343dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="@color/grey"
-        android:contentDescription="@string/addQuestion"
-        android:text="@string/showResult"
-        android:textColor="#D5D5D5"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/questionRW"
-        app:layout_constraintVertical_bias="0.252" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/questionRW"
-        android:layout_width="332dp"
-        android:layout_height="462dp"
+        android:layout_width="334dp"
+        android:layout_height="459dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.315"
+        app:layout_constraintVertical_bias="0.442"
         tools:listitem="@layout/question_item" />
 
     <ImageView
@@ -50,11 +35,10 @@
         android:id="@+id/smallLogo"
         android:layout_width="98dp"
         android:layout_height="17dp"
-        android:layout_marginBottom="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showResult"
+        app:layout_constraintTop_toBottomOf="@+id/questionRW"
         app:srcCompat="@drawable/small_logo" />
 
 
