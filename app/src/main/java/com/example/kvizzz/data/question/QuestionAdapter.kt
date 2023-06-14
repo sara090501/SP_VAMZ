@@ -41,13 +41,13 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
             binding.apply {
                 question.text = item.question
 
-                val green: FloatArray = floatArrayOf(91f,44f,64f)
-                var red: FloatArray = floatArrayOf(356f,49f,64f)
+                val green: Int = Color.rgb(255, 102, 102)
+                val red: Int = Color.rgb(255, 102, 102)
                 no.setOnClickListener {
                     if (!item.right) {
-                        question.setBackgroundColor(Color.HSVToColor(green))
+                        question.setBackgroundColor(green)
                     } else {
-                        question.setBackgroundColor(Color.HSVToColor(red))
+                        question.setBackgroundColor(red)
                     }
 
                     no.isEnabled = false
@@ -56,9 +56,9 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
 
                 yes.setOnClickListener {
                     if (item.right) {
-                        question.setBackgroundColor(Color.HSVToColor(green))
+                        question.setBackgroundColor(green)
                     } else {
-                        question.setBackgroundColor(Color.HSVToColor(red))
+                        question.setBackgroundColor(red)
                     }
 
                     no.isEnabled = false
