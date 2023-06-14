@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         exit.setOnClickListener {
             onDestroy()
         }
-
     }
 
     override fun onDestroy() {

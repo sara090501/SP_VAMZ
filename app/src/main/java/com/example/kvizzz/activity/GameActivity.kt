@@ -29,11 +29,6 @@ class GameActivity : AppCompatActivity() {
 
         categoryId = intent.getIntExtra("categoryId", 0)
 
-        binding.showResult.setOnClickListener {
-//            val intent = Intent(this, Result::class.java)
-//            startActivity(intent)
-        }
-
         binding.exit.setOnClickListener {
             finish()
         }
