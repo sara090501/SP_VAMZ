@@ -48,20 +48,13 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
                     } else {
                         question.setBackgroundColor(Color.RED)
                     }
+                }
 
-                    yes.setOnClickListener {
-                        if (item.right) {
-                            question.setBackgroundColor(Color.GREEN)
-                        } else {
-                            question.setBackgroundColor(Color.RED)
-                        }
-//
-//                itemCategoryName.setOnClickListener {
-//                    val intent = Intent(context, CategoryDetailActivity::class.java)
-//                    intent.putExtra("category_detail", item.id)
-//                    context.startActivity(intent)
-//                }
-
+                yes.setOnClickListener {
+                    if (item.right) {
+                        question.setBackgroundColor(Color.GREEN)
+                    } else {
+                        question.setBackgroundColor(Color.RED)
                     }
                 }
             }
