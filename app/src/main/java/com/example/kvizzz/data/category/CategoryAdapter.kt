@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kvizzz.activity.CategoryDetailActivity
 import com.example.kvizzz.databinding.CategoryItemBinding
 
+// kod inspirovany strankou developer.android.com
 class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
     private lateinit var binding: CategoryItemBinding
     private lateinit var context: Context
@@ -33,15 +34,17 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
 
     //vnutorna pomocna trieda na naplnenie RecyclerView
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
-        //ztlmenie vynimky
         @SuppressLint("SetTextI18n")
         fun bind(item: Category) {
             binding.apply {
-                //nastavenie hodnot v layoute
+                // vypis hodnot z databazy do layout
                 itemCategoryName.text = item.name
 
+                // presun do detailu kategorie po kliknuti na tlacitdlo danej kategorie
                 itemCategoryName.setOnClickListener {
                     val intent = Intent(context, CategoryDetailActivity::class.java)
+
+                    //dafinicia id kategorie pre dalsie pracovanie v detaile
                     intent.putExtra("category_detail", item.id)
                     context.startActivity(intent)
                 }

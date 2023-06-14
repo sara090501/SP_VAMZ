@@ -31,16 +31,19 @@ class CategoryDetailActivity : AppCompatActivity() {
             finish()
         }
 
+        // urcenie id kategorie pomocou mapovacieho kluca
         intent.extras?.let {
             categoryId = it.getInt("category_detail")
         }
 
         binding.apply {
+            // vykreslenie textu na zaklade dat z db
             nameOfCategory.text =
                 quizDatabase.categoryDao().getCategory(categoryId).name
             categoryDescription.text =
                 quizDatabase.categoryDao().getCategory(categoryId).description
 
+            // prechod do pridania kategorie pomocou tlacidla
             binding.addQuestion.setOnClickListener {
                 val intent = Intent(this@CategoryDetailActivity,
                     AddQuestionActivity::class.java)
@@ -48,6 +51,7 @@ class CategoryDetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            // spustenie kvizu pomocou tlacidla
             binding.play.setOnClickListener {
                 val intent = Intent(this@CategoryDetailActivity,
                     GameActivity::class.java)
@@ -55,6 +59,7 @@ class CategoryDetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+            // odstranenie kategorie pomocou tlacidla
             binding.removeCategory.setOnClickListener {
                 categoryEntity = quizDatabase.categoryDao().getCategory(categoryId)
                 quizDatabase.categoryDao().deleteCategory(categoryEntity)

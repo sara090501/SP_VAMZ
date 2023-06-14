@@ -13,12 +13,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // prechod do menu tlacidlom
         val playButton: Button = findViewById(R.id.play)
         playButton.setOnClickListener {
             val intent = Intent(this@MainActivity, MenuActivity::class.java)
             startActivity(intent)
         }
 
+        // destrukcia aktivity
         val exit: ImageView = findViewById(R.id.exit)
         exit.setOnClickListener {
             onDestroy()

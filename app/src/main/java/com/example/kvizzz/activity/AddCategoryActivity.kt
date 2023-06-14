@@ -15,6 +15,7 @@ class AddCategoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddCategoryBinding
 
+    // vytvorenie databazy
     private val quizDatabase : QuizDatabase by lazy {
         Room.databaseBuilder(this, QuizDatabase::class.java, "quiz_database")
             .allowMainThreadQueries()
@@ -35,6 +36,7 @@ class AddCategoryActivity : AppCompatActivity() {
             addCategory.setOnClickListener {
                 val name = fillCategoryName
 
+                // pri nevyplneni mena sa kategoria neulozi
                 if (isFieldEmpty(name.text.toString())) {
                     val nameNotFilled: String = getString(R.string.nameNotFilled)
                     name.error = nameNotFilled
@@ -52,6 +54,7 @@ class AddCategoryActivity : AppCompatActivity() {
         val name = binding.fillCategoryName.text.toString()
         val description = binding.fillCategoryDesctription.text.toString()
 
+        // vytvorenie novej kategorie s parametrami a ulozenie do db
         val category = Category(0, name, description)
         quizDatabase.categoryDao().addCategory(category)
     }
@@ -59,6 +62,7 @@ class AddCategoryActivity : AppCompatActivity() {
     private fun showFinalAddCategoryDialog() {
         val name: TextView = binding.fillCategoryName
 
+        // vyhodenie dialogoveho ona na potvrdenie ulozenia
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.reallyAddCategory, name.text.toString()))
             .setCancelable(false)
