@@ -11,7 +11,7 @@
         android:id="@+id/categoryDescription"
         android:layout_width="313dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/categoryDesctioprion"
         android:textAlignment="center"
         android:textAllCaps="false"
@@ -53,8 +53,8 @@
 
     <Button
         android:id="@+id/play"
-        android:layout_width="343dp"
-        android:layout_height="61dp"
+        android:layout_width="229dp"
+        android:layout_height="92dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/addQuestion"
         android:text="@string/play"

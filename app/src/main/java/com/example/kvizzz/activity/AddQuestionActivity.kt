@@ -48,11 +48,23 @@ class AddQuestionActivity : AppCompatActivity() {
                     question.error = nameNotFilled
                     question.requestFocus()
                 }
-                else {
-                    showFinalAddCategoryDialog()
+                else if (decisionRW.checkedRadioButtonId == -1) {
+                    notDecided()
+                } else {
+                    showFinalAddQuestionDialog()
                 }
             }
         }
+    }
+
+    private fun notDecided() {
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.noDecision))
+            .setCancelable(true)
+            .setPositiveButton(getString(R.string.ok)) { _, _ ->
+                closeContextMenu()
+            }
+            .show()
     }
 
     private fun insertDataToDatabase() {
@@ -61,7 +73,7 @@ class AddQuestionActivity : AppCompatActivity() {
         quizDatabase.questionDao().addQuestion(question)
     }
 
-    private fun showFinalAddCategoryDialog() {
+    private fun showFinalAddQuestionDialog() {
         val question: TextView = binding.fillQuestion
 
         MaterialAlertDialogBuilder(requireContext())

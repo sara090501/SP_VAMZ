@@ -26,10 +26,10 @@
 
     <EditText
         android:id="@+id/fillQuestion"
-        android:layout_width="326dp"
-        android:layout_height="197dp"
+        android:layout_width="337dp"
+        android:layout_height="110dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/rectangle_background"
         android:gravity="center"
@@ -37,7 +37,6 @@
         android:textColor="#D5D5D5"
         android:textColorHint="#8C8C8C"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/questionText" />
 
@@ -55,7 +54,7 @@
         android:id="@+id/addQuestion"
         android:layout_width="343dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="28dp"
         android:backgroundTint="@color/grey"
         android:contentDescription="@string/addQuestion"
         android:text="@string/addQuestion"
@@ -80,8 +79,7 @@
         android:id="@+id/decisionRW"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/addCategory"
+        app:layout_constraintBottom_toTopOf="@+id/addQuestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fillQuestion">
