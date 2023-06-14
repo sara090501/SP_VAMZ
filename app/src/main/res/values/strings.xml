@@ -30,6 +30,7 @@
     <string name="no">Nie</string>
     <string name="questionText">Otázka</string>
     <string name="reallyAddQuestion">Naozaj chceš pridať otázku %s?</string>
+    <string name="reallyRemoveCategory">Naozaj chceš odstrániť kategóriu %s?</string>
     <string name="noDecision">Správnosť musí byť zvolená!</string>
     <string name="showResult">Vyhodnotiť</string>
 </resources>

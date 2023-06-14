@@ -1,12 +1,16 @@
 package com.example.kvizzz.activity
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
+import com.example.kvizzz.R
 import com.example.kvizzz.data.QuizDatabase
 import com.example.kvizzz.data.category.Category
 import com.example.kvizzz.databinding.ActivityCategoryDetailBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class CategoryDetailActivity : AppCompatActivity() {
 
@@ -61,10 +65,35 @@ class CategoryDetailActivity : AppCompatActivity() {
 
             // odstranenie kategorie pomocou tlacidla
             binding.removeCategory.setOnClickListener {
-                categoryEntity = quizDatabase.categoryDao().getCategory(categoryId)
-                quizDatabase.categoryDao().deleteCategory(categoryEntity)
-                finish()
+                showFinalRemoveCategoryDialog()
             }
         }
+    }
+
+    private fun removeCategoryFromDatabase() {
+        categoryEntity = quizDatabase.categoryDao().getCategory(categoryId)
+        quizDatabase.categoryDao().deleteCategory(categoryEntity)
+    }
+
+    private fun showFinalRemoveCategoryDialog() {
+        val name: TextView = binding.nameOfCategory
+
+        // vyhodenie dialogoveho ona na potvrdenie ulozenia
+        MaterialAlertDialogBuilder(requireContext())
+            .setTitle(getString(R.string.reallyRemoveCategory, name.text.toString()))
+            .setCancelable(false)
+            .setPositiveButton(getString(R.string.yesAddCategory)) { _, _ ->
+                removeCategoryFromDatabase()
+                closeContextMenu()
+                finish()
+            }
+            .setNegativeButton(getString(R.string.noAddCategory)) { _, _ ->
+                closeContextMenu()
+            }
+            .show()
+    }
+
+    private fun requireContext(): Context {
+        return this
     }
 }

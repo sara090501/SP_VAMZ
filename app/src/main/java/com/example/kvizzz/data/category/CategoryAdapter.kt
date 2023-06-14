@@ -32,7 +32,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
         return differ.currentList.size
     }
 
-    //vnutorna pomocna trieda na naplnenie RecyclerView
+    // vnutorna pomocna trieda na naplnenie RecyclerView
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
         @SuppressLint("SetTextI18n")
         fun bind(item: Category) {
@@ -44,7 +44,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.ViewHolder>(){
                 itemCategoryName.setOnClickListener {
                     val intent = Intent(context, CategoryDetailActivity::class.java)
 
-                    //dafinicia id kategorie pre dalsie pracovanie v detaile
+                    // definicia id kategorie pre dalsie pracovanie v detaile
                     intent.putExtra("category_detail", item.id)
                     context.startActivity(intent)
                 }
