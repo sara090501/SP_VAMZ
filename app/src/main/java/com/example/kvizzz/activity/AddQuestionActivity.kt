@@ -17,6 +17,7 @@ class AddQuestionActivity : AppCompatActivity() {
     var categoryId = 0
     var right = false
 
+    // vytvorenie databazy
     private val quizDatabase : QuizDatabase by lazy {
         Room.databaseBuilder(this, QuizDatabase::class.java, "quiz_database")
             .allowMainThreadQueries()
@@ -29,6 +30,7 @@ class AddQuestionActivity : AppCompatActivity() {
         binding = ActivityAddQuestionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // priadenia idcka danej kategorie, v ktorom sa otazka nachadza
         categoryId = intent.getIntExtra("categoryId", 0)
 
         binding.exit.setOnClickListener {
@@ -39,15 +41,18 @@ class AddQuestionActivity : AppCompatActivity() {
             addQuestion.setOnClickListener {
                 val question = fillQuestion
 
+                //na zaklade zvolenej odpovede sa do databazy ulozi spravnost
                 if (decisionRW.checkedRadioButtonId == yesDecision.id) {
                     right = true
                 }
 
+                // osetrenie prazdnej otazky
                 if (isFieldEmpty(question.text.toString())) {
                     val nameNotFilled: String = getString(R.string.nameNotFilled)
                     question.error = nameNotFilled
                     question.requestFocus()
                 }
+                //osetrenie vyberu spravnosti
                 else if (decisionRW.checkedRadioButtonId == -1) {
                     notDecided()
                 } else {
@@ -58,6 +63,8 @@ class AddQuestionActivity : AppCompatActivity() {
     }
 
     private fun notDecided() {
+        // dialogove okno, ktore informuje o tom, ze pouzivatej nevybral,
+        // co bude pri otazke spravna odpoved
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.noDecision))
             .setCancelable(true)
@@ -69,6 +76,7 @@ class AddQuestionActivity : AppCompatActivity() {
 
     private fun insertDataToDatabase() {
         val name = binding.fillQuestion.text.toString()
+        // vytvorenie otazky na zaklade parametrov a nasledne ulozenie do databazy
         val question = Question(0, categoryId, name, right)
         quizDatabase.questionDao().addQuestion(question)
     }
@@ -76,6 +84,7 @@ class AddQuestionActivity : AppCompatActivity() {
     private fun showFinalAddQuestionDialog() {
         val question: TextView = binding.fillQuestion
 
+        // rozhodutie, ci chceme alebo nechceme otazku pridat do databazy
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(getString(R.string.reallyAddQuestion, question.text.toString()))
             .setCancelable(false)

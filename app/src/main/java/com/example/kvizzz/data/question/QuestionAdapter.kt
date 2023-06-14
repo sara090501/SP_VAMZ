@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kvizzz.databinding.QuestionItemBinding
 import java.util.Arrays
 
+// kod inspirovany strankou developer.android.com
 class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
     private lateinit var binding: QuestionItemBinding
     private lateinit var context: Context
@@ -20,8 +21,6 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
         binding = QuestionItemBinding.inflate(inflater, parent, false)
         context = parent.context
         return ViewHolder()
-
-//        binding.question
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -35,32 +34,39 @@ class QuestionAdapter : RecyclerView.Adapter<QuestionAdapter.ViewHolder>(){
 
     //vnutorna pomocna trieda na naplnenie RecyclerView
     inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
-        //ztlmenie vynimky
         @SuppressLint("SetTextI18n")
         fun bind(item: Question) {
             binding.apply {
+                // vypis hodnot z databazy do layout
                 question.text = item.question
 
-                val green: FloatArray = floatArrayOf(91f,44f,64f)
-                var red: FloatArray = floatArrayOf(356f,49f,64f)
+                // vytvorenie farieb pre spravnost odpovede
+                val green: Int = Color.rgb(51, 204, 51)
+                val red: Int = Color.rgb(255, 102, 102)
+
+                // ak pouzivatel stacil tlacidlo nie
                 no.setOnClickListener {
+                    // ak je spravna odpoved nie, otazka sa zozeleni, inak ocerveni
                     if (!item.right) {
-                        question.setBackgroundColor(Color.HSVToColor(green))
+                        question.setBackgroundColor(green)
                     } else {
-                        question.setBackgroundColor(Color.HSVToColor(red))
+                        question.setBackgroundColor(red)
                     }
 
+                    // znefunkcnenie tlacidiel
                     no.isEnabled = false
                     yes.isEnabled = false
                 }
 
                 yes.setOnClickListener {
+                    // ak je spravna odpoved ano, otazka sa zozeleni, inak ocerveni
                     if (item.right) {
-                        question.setBackgroundColor(Color.HSVToColor(green))
+                        question.setBackgroundColor(green)
                     } else {
-                        question.setBackgroundColor(Color.HSVToColor(red))
+                        question.setBackgroundColor(red)
                     }
 
+                    // znefunkcnenie tlacidiel
                     no.isEnabled = false
                     yes.isEnabled = false
                 }

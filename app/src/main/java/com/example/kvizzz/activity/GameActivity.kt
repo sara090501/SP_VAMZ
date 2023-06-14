@@ -27,12 +27,8 @@ class GameActivity : AppCompatActivity() {
         binding = ActivityGameBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // urcenie id kategorie pomocou mapovacieho kluca
         categoryId = intent.getIntExtra("categoryId", 0)
-
-        binding.showResult.setOnClickListener {
-//            val intent = Intent(this, Result::class.java)
-//            startActivity(intent)
-        }
 
         binding.exit.setOnClickListener {
             finish()
@@ -46,6 +42,7 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun checkItem() {
+        // vypis jednotlivych otazok pod seba
         binding.apply {
             questionAdapter.differ
                 .submitList(quizDatabase.questionDao().getAllQuestions(categoryId))

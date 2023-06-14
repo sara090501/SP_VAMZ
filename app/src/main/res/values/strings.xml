@@ -3,7 +3,7 @@
     <string name="play">Hrať</string>
     <string name="quizPicture">Logo kvízu</string>
     <string name="small_logo">Malé logo kvízu</string>
-    <string name="rateApp">Ohodnoť aplikáciu</string>
+    <string name="like">Páči sa mi aplikácia</string>
     <string name="addCategory">Pridať kategóriu</string>
     <string name="categories">Kategórie</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -30,6 +30,7 @@
     <string name="no">Nie</string>
     <string name="questionText">Otázka</string>
     <string name="reallyAddQuestion">Naozaj chceš pridať otázku %s?</string>
+    <string name="reallyRemoveCategory">Naozaj chceš odstrániť kategóriu %s?</string>
     <string name="noDecision">Správnosť musí byť zvolená!</string>
     <string name="showResult">Vyhodnotiť</string>
 </resources>

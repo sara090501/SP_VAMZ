@@ -27,6 +27,7 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // prechod na pridanie kategorie tlacidlom
         binding.addCategory.setOnClickListener {
             val intent = Intent(this, AddCategoryActivity::class.java)
             startActivity(intent)
@@ -44,12 +45,12 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun checkItem() {
+        // vypis jednotlivych kategorii pod seba
         binding.apply {
             categoryAdapter.differ.submitList(quizDatabase.categoryDao().getAllCategories())
             setupRecyclerView()
 
             categoryRecyclerView.canScrollVertically(80)
-
         }
     }
 
